@@ -6,12 +6,12 @@ pkgdesc="Leitor autoral de EPUB e PDF com narração TTS (Piper), construído co
 arch=('x86_64')
 url="https://github.com/is-suzart/tomo-nandomo"
 license=('MIT')
-depends=('gtk4' 'nodejs>=20' 'pango' 'cairo' 'gdk-pixbuf2' 'zenity')
+depends=('gtk4' 'nodejs>=20' 'pango' 'cairo' 'gdk-pixbuf2' 'zenity' 'mpv')
 optdepends=(
-  'piper: motor de síntese neural de voz local (offline)'
-  'mpv: reprodução de áudio'
-  'ffplay: reprodução de áudio alternativa (ffmpeg)'
-  'paplay: reprodução de áudio via PulseAudio/PipeWire'
+  'piper-tts-bin: motor de síntese neural de voz local offline (AUR)'
+  'piper-voices-minimal: vozes adicionais para o Piper (AUR)'
+  'ffplay: player de áudio alternativo (ffmpeg)'
+  'paplay: player de áudio nativo (PulseAudio/PipeWire)'
 )
 makedepends=('git' 'rust' 'cargo' 'pnpm')
 provides=('tomo')

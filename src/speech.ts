@@ -49,9 +49,18 @@ function which(binary: string): string | null {
 
 /** Where the piper binary and its voices live. */
 function piperPaths(): { binary: string; voices: string } | null {
-  const binary = process.env['PIPER_BIN'] ?? which('piper');
+  const binary =
+    process.env['PIPER_BIN'] ??
+    which('piper') ??
+    which('piper-tts') ??
+    (existsSync('/usr/bin/piper-tts') ? '/usr/bin/piper-tts' : null) ??
+    (existsSync('/usr/bin/piper') ? '/usr/bin/piper' : null);
   if (!binary) return null;
-  const voices = process.env['PIPER_VOICES'] ?? join(process.env['HOME'] ?? '/tmp', '.local', 'share', 'piper-voices');
+  const userVoices = join(process.env['HOME'] ?? '/tmp', '.local', 'share', 'piper-voices');
+  const systemVoices = '/usr/share/piper-voices';
+  const voices =
+    process.env['PIPER_VOICES'] ??
+    (existsSync(userVoices) ? userVoices : (existsSync(systemVoices) ? systemVoices : userVoices));
   return { binary, voices };
 }
 
