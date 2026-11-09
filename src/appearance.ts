@@ -55,6 +55,11 @@ export function chrome(theme: AppTheme): PageColors {
 /** GTK stylesheet for the reader shell with Bocchi brand identity. */
 export function gtkStyles(settings: ReaderSettings): string {
   const page = pageColors(settings.filter);
+  const system = settings.theme === 'system';
+  const accent = system ? '@theme_selected_bg_color' : BOCCHI.coral;
+  const onAccent = system ? '@theme_selected_fg_color' : BOCCHI.creme;
+  const accentHover = system ? 'shade(@theme_selected_bg_color, 0.9)' : '#f86f62';
+  const progress = system ? accent : BOCCHI.dourado;
   const family = settings.fontFamily.includes(' ') ? `"${settings.fontFamily}"` : settings.fontFamily;
   return `
 /* ── Bocchi Reader Global Styles ── */

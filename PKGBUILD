@@ -35,6 +35,9 @@ package() {
   install -dm755 "$pkgdir/usr/lib/tomo"
   install -dm755 "$pkgdir/usr/bin"
   install -dm755 "$pkgdir/usr/share/applications"
+  install -dm755 "$pkgdir/usr/share/icons/hicolor/scalable/apps"
+  install -dm755 "$pkgdir/usr/share/icons/hicolor/128x128/apps"
+  install -dm755 "$pkgdir/usr/share/icons/hicolor/256x256/apps"
 
   # App bundle e dependências do Node
   cp -r dist "$pkgdir/usr/lib/tomo/"
@@ -52,6 +55,11 @@ exec node /usr/lib/tomo/dist/bundle.js "$@"
 EOF
   chmod 755 "$pkgdir/usr/bin/tomo"
 
-  # Desktop entry
+  # Desktop entry gerado a partir do AppMeta
   install -Dm644 tomo.desktop "$pkgdir/usr/share/applications/tomo.desktop"
+
+  # Ícones do aplicativo
+  install -Dm644 assets/tomo.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/tomo.svg"
+  install -Dm644 assets/tomo.png "$pkgdir/usr/share/icons/hicolor/128x128/apps/tomo.png"
+  install -Dm644 assets/tomo-256.png "$pkgdir/usr/share/icons/hicolor/256x256/apps/tomo.png"
 }

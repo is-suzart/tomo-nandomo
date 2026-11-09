@@ -5,6 +5,7 @@ import { gtkStyles } from './appearance.js';
 import { FONT_OPTIONS, type PageFilter, type ReaderState, type AppTheme, type ReadingMode } from './model.js';
 import { pickFile } from './picker.js';
 import { t, languageName } from './i18n.js';
+import { tomoAppMeta } from './meta.js';
 
 export interface ReaderAppProps {
   readonly state: ReaderState;
@@ -64,7 +65,8 @@ export function ReaderApp(props: ReaderAppProps): unknown {
   return (
     <gtk.Window
       objectName="reader"
-      title={() => (isLibrary ? 'tomo' : t('reader.bookTitle', { title: state.book()?.title ?? '' }))}
+      title={() => (isLibrary ? tomoAppMeta.name : t('reader.bookTitle', { title: state.book()?.title ?? '' }))}
+      icon_name="tomo"
       default_width={1180}
       default_height={820}
       width_request={960}

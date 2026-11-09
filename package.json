@@ -8,9 +8,10 @@
     "tomo": "./bin/tomo.mjs"
   },
   "scripts": {
+    "generate:desktop": "tsx scripts/generate-desktop.mjs",
     "build:host": "cargo build --release --manifest-path host/Cargo.toml",
     "build:app": "vite build",
-    "build": "pnpm build:host && pnpm build:app",
+    "build": "pnpm build:host && pnpm build:app && pnpm generate:desktop",
     "start": "node scripts/run.mjs"
   },
   "dependencies": {

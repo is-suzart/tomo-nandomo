@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
 Name=tomo
-Comment=Leitor autoral de EPUB e PDF com TTS (Nandomo)
+Comment=Leitor autoral de EPUB e PDF com narração em voz alta (TTS Piper)
 Exec=tomo %F
-Icon=accessories-text-editor
+Icon=tomo
 Terminal=false
 Categories=Office;Viewer;AudioVideo;Audio;
 MimeType=application/epub+zip;application/pdf;

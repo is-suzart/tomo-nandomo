@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Gradiente de fundo sutil estilo Bocchi / Tomo -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D2A27"/>
+      <stop offset="100%" stop-color="#211F1D"/>
+    </linearGradient>
+
+    <!-- Gradiente suave do papel Creme -->
+    <linearGradient id="pageGradLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FAF2E6"/>
+      <stop offset="85%" stop-color="#FFF9F0"/>
+      <stop offset="100%" stop-color="#EFE3D0"/>
+    </linearGradient>
+    <linearGradient id="pageGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EFE3D0"/>
+      <stop offset="15%" stop-color="#FFF9F0"/>
+      <stop offset="100%" stop-color="#FAF2E6"/>
+    </linearGradient>
+
+    <!-- Gradiente do marcador Coral -->
+    <linearGradient id="coralGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F9948A"/>
+      <stop offset="100%" stop-color="#F78175"/>
+    </linearGradient>
+
+    <!-- Sombra suave das páginas -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Fundo com cantos arredondados (squircle padrão de ícone de desktop Linux) -->
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="url(#bgGrad)" stroke="#3E3A36" stroke-width="2"/>
+
+  <!-- Livro Aberto com páginas elegantes -->
+  <g filter="url(#softShadow)">
+    <!-- Base inferior da lombada/capa -->
+    <path d="M 38 184 Q 78 196 128 186 Q 178 196 218 184 L 218 194 Q 178 206 128 196 Q 78 206 38 194 Z" fill="#E9AC45" opacity="0.9"/>
+
+    <!-- Página Esquerda -->
+    <path d="M 128 184 Q 82 194 44 180 L 44 76 Q 82 90 128 80 Z" fill="url(#pageGradLeft)" stroke="#E5D9C8" stroke-width="1.5"/>
+
+    <!-- Linhas de texto estilizadas - Página Esquerda -->
+    <rect x="62" y="104" width="46" height="5" rx="2.5" fill="#57524E" opacity="0.35"/>
+    <rect x="62" y="118" width="50" height="5" rx="2.5" fill="#57524E" opacity="0.35"/>
+    <rect x="62" y="132" width="44" height="5" rx="2.5" fill="#57524E" opacity="0.35"/>
+    <rect x="62" y="146" width="34" height="5" rx="2.5" fill="#57524E" opacity="0.35"/>
+
+    <!-- Página Direita -->
+    <path d="M 128 80 Q 174 90 212 76 L 212 180 Q 174 194 128 184 Z" fill="url(#pageGradRight)" stroke="#E5D9C8" stroke-width="1.5"/>
+
+    <!-- Linhas de texto estilizadas - Página Direita -->
+    <rect x="144" y="104" width="48" height="5" rx="2.5" fill="#57524E" opacity="0.35"/>
+    <!-- Linha com destaque dourado (TTS highlight) -->
+    <rect x="144" y="116" width="44" height="9" rx="3" fill="#E9AC45" opacity="0.4"/>
+    <rect x="146" y="118" width="40" height="5" rx="2.5" fill="#252321" opacity="0.85"/>
+    <rect x="144" y="132" width="46" height="5" rx="2.5" fill="#57524E" opacity="0.35"/>
+    <rect x="144" y="146" width="38" height="5" rx="2.5" fill="#57524E" opacity="0.35"/>
+
+    <!-- Vinco central / lombada interna -->
+    <line x1="128" y1="80" x2="128" y2="184" stroke="#D3C5B2" stroke-width="2"/>
+  </g>
+
+  <!-- Marcador de página Coral pendurado no topo -->
+  <path d="M 122 74 L 134 74 L 134 116 L 128 110 L 122 116 Z" fill="url(#coralGrad)" filter="url(#softShadow)"/>
+
+  <!-- Ondas sonoras sutis e poéticas emergindo do livro (símbolo de narração/voz) -->
+  <g stroke="#F78175" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.95">
+    <path d="M 120 56 Q 128 50 136 56"/>
+    <path d="M 112 44 Q 128 34 144 44"/>
+  </g>
+
+  <!-- Ponto dourado poético no topo da onda sonora -->
+  <circle cx="128" cy="24" r="3.5" fill="#E9AC45"/>
+</svg>
