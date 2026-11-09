@@ -1,0 +1,26 @@
+[package]
+name = "bridge-gtk-host"
+version = "0.0.1"
+edition = "2021"
+description = "GTK4 host binary for @nandomo/bridge-gtk. Reads JSON commands on stdin (create / set / add_child / connect / destroy), builds GTK widgets imperatively, runs the GTK main loop, and emits JSON events back on stdout."
+
+[[bin]]
+name = "bridge-gtk-host"
+path = "src/main.rs"
+
+[dependencies]
+gtk4 = { version = "0.11", features = ["gnome_50"] }
+gdk4 = "0.11"
+glib = "0.20"
+gio = "0.20"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+futures-channel = "0.3"
+futures-util = "0.3"
+
+[profile.release]
+# The smoke test starts the binary and exits in seconds, so we
+# trade a few hundred KB of debug info for slightly faster compile.
+strip = true
+lto = false
+codegen-units = 16

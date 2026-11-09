@@ -1,0 +1,10 @@
+node_modules/
+dist/
+host/target/
+.DS_Store
+*.log
+*.wav
+*.pkg.tar.zst
+pkg/
+# makepkg src folder (não confundir com src do app)
+/src_pkg/

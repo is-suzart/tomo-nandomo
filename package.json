@@ -1,0 +1,29 @@
+{
+  "name": "tomo-reader",
+  "version": "0.1.0",
+  "private": true,
+  "description": "tomo — Leitor de EPUB/PDF nativo com narração TTS (Piper), construído com nandomo.",
+  "type": "module",
+  "bin": {
+    "tomo": "./bin/tomo.mjs"
+  },
+  "scripts": {
+    "build:host": "cargo build --release --manifest-path host/Cargo.toml",
+    "build:app": "vite build",
+    "build": "pnpm build:host && pnpm build:app",
+    "start": "node scripts/run.mjs"
+  },
+  "dependencies": {
+    "adm-zip": "^0.6.1",
+    "fast-xml-parser": "^5.11.2",
+    "node-html-parser": "^9.0.5",
+    "pdfjs-dist": "^5.7.284"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/node": "^20.11.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0"
+  }
+}
