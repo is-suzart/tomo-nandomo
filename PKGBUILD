@@ -4,7 +4,7 @@ pkgver=0.1.0
 pkgrel=1
 pkgdesc="Leitor autoral de EPUB e PDF com narração TTS (Piper), construído com nandomo (GTK4 + TypeScript)"
 arch=('x86_64')
-url="https://github.com/is-suzart/nandomo"
+url="https://github.com/is-suzart/tomo-nandomo"
 license=('MIT')
 depends=('gtk4' 'nodejs>=20' 'pango' 'cairo' 'gdk-pixbuf2' 'zenity')
 optdepends=(
@@ -16,7 +16,7 @@ optdepends=(
 makedepends=('git' 'rust' 'cargo' 'pnpm')
 provides=('tomo')
 conflicts=('tomo')
-source=("$pkgname::git+file://$PWD")
+source=("$pkgname::git+https://github.com/is-suzart/tomo-nandomo.git#branch=master")
 sha256sums=('SKIP')
 
 prepare() {
